@@ -1,12 +1,190 @@
 'use strict';
 
+import Canvas from './canvas';
 import CanvasGradient from './canvasGradient';
 import CanvasPattern from './canvasPattern';
-import {*} from './util';
+import ImageData from './imageData';
+//import {isValidNumber} from './util';
 
-class Context2d {
+export default class Context2D {
 
-  constructor(canvas) {
+  canvas: Canvas;
+  fillStyle: string|CanvasGradient|CanvasPattern = '#000';
+  font: string = '10px sans-serif';
+  globalAlpha: number = 1.0;
+  globalCompositeOperation: string = 'source-over';
+  lineCap: string = 'butt';
+  lineDashOffset: number = 0.0;
+  lineJoin: string = 'miter';
+  lineWidth: number = 1.0;
+  miterLimit: number = 10;
+  imageSmoothingEnabled: boolean = true;
+  shadowBlur: number = 0;
+  shadowColor: string = 'black';
+  shadowOffsetX: number = 0;
+  shadowOffsetY: number = 0;
+  strokeStyle: string|CanvasGradient|CanvasPattern = '#000';
+  textAlign: string = 'start';
+  textBaseline: string = 'alphabetic';
+  
+  private _imageData: ImageData;
+
+  constructor(canvas: Canvas) {
+    this.canvas = canvas;
+    this._imageData = new ImageData(canvas.width, canvas.height);
+  }
+
+  arc(x: number, y: number, radius: number,
+      startAngle: number, endAngle: number, anticlockwise: boolean): void {
+
+  }
+
+  arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void {
+
+  }
+
+  beginPath(): void {
+
+  }
+
+  bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number,
+                x: number, y: number): void {
+
+  }
+
+  clearRect(x: number, y: number, w: number, h: number): void {
+
+  }
+
+  clip(fillRule: string): void {
+
+  }
+
+  closePath(): void {
+
+  }
+
+  createImageData(imageDataOrSw: number|ImageData, sh: number): ImageData {
+    return undefined;
+  }
+
+  createLinearGradient(x0: number, y0: number, x1: number, y1: number): CanvasGradient {
+    return undefined;
+  }
+
+  createPattern(image: HTMLImageElement|HTMLCanvasElement|HTMLVideoElement,
+                repetition: string): CanvasPattern {
+    return undefined;
+  }
+
+  createRadialGradient(x0: number, y0: number, r0: number,
+                       x1: number, y1: number, r1: number): CanvasGradient {
+    return undefined;
+  }
+
+  drawImage(image: HTMLImageElement|HTMLCanvasElement|HTMLVideoElement,
+            offsetX: number, offsetY: number, width: number, height: number,
+            canvasOffsetX: number, canvasOffsetY: number,
+            canvasImageWidth: number, canvasImageHeight: number): void {
+
+  }
+
+  fill(fillRule: string): void {
+
+  }
+
+  fillRect(x: number, y: number, w: number, h: number): void {
+
+  }
+
+  fillText(text: string, x: number, y: number, maxWidth: number): void {
+
+  }
+
+  getImageData(sx: number, sy: number, sw: number, sh: number): ImageData {
+    return undefined;
+  }
+
+  getLineDash(): number[] {
+    return undefined;
+  }
+
+  isPointInPath(x: number, y: number, fillRule: string): boolean {
+    return undefined;
+  }
+
+  lineTo(x: number, y: number): void {
+
+  }
+
+  measureText(text: string): TextMetrics {
+    return undefined;
+  }
+
+  moveTo(x: number, y: number): void {
+
+  }
+
+  putImageData(imagedata: ImageData, dx: number, dy: number,
+               dirtyX: number, dirtyY: number,
+               dirtyWidth: number, dirtyHeight: number): void {
+
+  }
+
+  quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void {
+
+  }
+
+  rect(x: number, y: number, w: number, h: number): void {
+
+  }
+
+  restore(): void {
+
+  }
+
+  rotate(angle: number): void {
+
+  }
+
+  save(): void {
+
+  }
+
+  scale(x: number, y: number): void {
+
+  }
+
+  setLineDash(segments: number[]): void {
+
+  }
+
+  setTransform(m11: number, m12: number, m21: number, m22: number,
+               dx: number, dy: number): void {
+
+  }
+
+  stroke(): void {
+
+  }
+
+  strokeRect(x: number, y: number, w: number, h: number): void {
+
+  }
+
+  strokeText(text: string, x: number, y: number, maxWidth: number): void {
+
+  }
+
+  transform(m11: number, m12: number, m21: number, m22: number, dx: number, dy: number): void {
+
+  }
+
+  translate(x: number, y: number): void {
+
+  }
+
+  /*constructor(canvas) {
     this._canvas = canvas;
 
     this._lineWidth = 1.0;
@@ -150,8 +328,8 @@ class Context2d {
 
   set fillStyle(value) {
     if (isString(value)
-    || value instanceof CanvasGradient
-    || value instanceof CanvasPattern) {
+      || value instanceof CanvasGradient
+      || value instanceof CanvasPattern) {
       this._fillStyle = value;
     }
   }
@@ -162,8 +340,8 @@ class Context2d {
 
   set strokeStyle(value) {
     if (isString(value)
-    || value instanceof CanvasGradient
-    || value instanceof CanvasPattern) {
+      || value instanceof CanvasGradient
+      || value instanceof CanvasPattern) {
       this._fillStyle = value;
     }
   }
@@ -451,8 +629,6 @@ class Context2d {
 
   clearHitRegions() {
 
-  }
+  }*/
 
 }
-
-export default Context2d;

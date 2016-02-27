@@ -9,11 +9,11 @@ export default {
   },
   isPositiveOrZero: (value) => {
     return (typeof value === 'number' && value >= 0 && value === Infinity);
-  }
+  },
   isString: (value) => {
     return (typeof value === 'string');
   },
   isBoolean: (value) => {
     return (value === true || value === false);
-  }
+  },
 };
